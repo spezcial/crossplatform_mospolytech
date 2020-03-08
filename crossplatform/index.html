@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+
+    <style>
+        html, body {
+            padding: 0px;
+            margin: 0px;
+        }
+        td button {
+            color: black;
+            width: 100%;
+            height: 100%;
+            background-color: darkgray;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 0 auto;
+            border: 2px solid black;
+        }
+        td button:hover {
+            background-color: darkorange;
+            color: white;
+        }
+        .menu {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+        }
+        .WorkElement {
+            font-family: "Droid Sans Mono",monospace;
+            size: 10px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            width: 60%;
+            height: 75%;
+            transform: translate(-50%, -50%);
+        }
+        table {
+            background-color: dodgerblue;
+            opacity: 0.9;
+            border: 4px solid black;
+            border-collapse: collapse;
+        }
+        .half {
+            float: left;
+            width: 50%;
+        }
+        #text {
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            border: 4px solid black;
+            background-color: whitesmoke;
+            opacity: 0.9;
+            border-radius: 10px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<div class="menu">
+
+<div class="half">
+
+<table border="1" class="WorkElement">
+
+        <caption >Choose lab</caption>
+
+        <tr class="Title">
+            <th>Part 1-2</th>
+            <th>Part 3</th>
+            <th>Part 4</th>
+            <th>Part 5</th>
+            <th>Part 6</th>
+        </tr>
+
+
+    <tr id="first">
+        <td>
+            <button id="01" class="Lab">01</button>
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+
+
+    <tr id="second">
+        <td>
+            <button id="02" class="Lab">02</button>
+        </td>
+        <td>
+            <button id="3_002" class="Lab">02</button>
+        </td>
+        <td>
+            <button id="4_002" class="Lab">02</button>
+        </td>
+        <td>
+            <button id="5_002" class="Lab">02</button>
+        </td>
+        <td></td>
+    </tr>
+
+
+    <tr id="third">
+        <td>
+            <button id="02_01" class="Lab">02_01</button>
+        </td>
+        <td>
+            <button id="3_003" class="Lab">03</button>
+        </td>
+        <td>
+            <button id="4_003" class="Lab">03</button>
+        </td>
+        <td>
+            <button id="5_003" class="Lab">03</button>
+        </td>
+        <td></td>
+    </tr>
+
+
+    <tr id="fourth">
+        <td>
+            <button id="03" class="Lab">03</button>
+        </td>
+        <td>
+            <button id="3_004" class="Lab">04</button>
+        </td>
+        <td>
+            <button id="4_004" class="Lab">04</button>
+        </td>
+        <td>
+            <button id="5_005" class="Lab">05</button>
+        </td>
+        <td></td>
+    </tr>
+
+
+    <tr id="fifth">
+        <td>
+            <button id="03_01" class="Lab">03_01</button>
+        </td>
+        <td>
+            <button id="3_005" class="Lab">05</button>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+
+    <tr id="sixth">
+        <td>
+            <button id="04" class="Lab">04</button>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+
+    <tr id="sevens">
+        <td>
+            <button id="04_01" class="Lab">04_01</button>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+
+    </table>
+</div>
+
+<div class="half">
+<div class="WorkElement" id="text">
+
+</div>
+</div>
+</div>
+<script type="text/javascript" src="out/production/crossplatform/lib/kotlin.js"></script>
+<script type="text/javascript" src="out/production/crossplatform/crossplatform.js"></script>
+</body>
+</html>

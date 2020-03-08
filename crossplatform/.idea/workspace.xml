@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bb940aa4-e38d-4fdf-80dd-6dc12cdaaea5" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="KonanWorkspace">
+    <executables />
+  </component>
+  <component name="ProjectId" id="1YcONYV7EtGdIXXS5LrfyWE63Id" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager">
+    <configuration name="crossplatform.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/out/production/crossplatform/crossplatform.js" working-dir="$PROJECT_DIR$">
+      <envs>
+        <env name="NODE_PATH" value="out/production/crossplatform/lib" />
+      </envs>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.crossplatform.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bb940aa4-e38d-4fdf-80dd-6dc12cdaaea5" name="Default Changelist" comment="" />
+      <created>1583238377025</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1583238377025</updated>
+      <workItem from="1583238378339" duration="6046000" />
+      <workItem from="1583332475029" duration="4889000" />
+      <workItem from="1583360295107" duration="813000" />
+      <workItem from="1583425769214" duration="4376000" />
+      <workItem from="1583437878269" duration="264000" />
+      <workItem from="1583439156948" duration="1651000" />
+      <workItem from="1583588624023" duration="1820000" />
+      <workItem from="1583590609931" duration="6216000" />
+      <workItem from="1583661786584" duration="5008000" />
+      <workItem from="1583667699277" duration="19466000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="555" y="180" width="800" height="672" key="#Intentions" timestamp="1583669763295">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="555" y="180" width="800" height="672" key="#Intentions/0.0.1920.1040@0.0.1920.1040" timestamp="1583669763295" />
+    <state x="643" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1583667747626">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="643" y="346" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583667747626" />
+    <state x="543" y="177" width="824" height="679" key="editAsTableFormatDialogDimension" timestamp="1583242777549">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="543" y="177" width="824" height="679" key="editAsTableFormatDialogDimension/0.0.1920.1040@0.0.1920.1040" timestamp="1583242777549" />
+    <state x="376" y="246" width="1157" height="540" key="new project wizard" timestamp="1583337566016">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="376" y="246" width="1157" height="540" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1583337566016" />
+    <state x="624" y="238" key="run.anything.popup" timestamp="1583669711011">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="624" y="238" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583669711011" />
+    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1583594100022">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583594100022" />
+  </component>
+</project>
