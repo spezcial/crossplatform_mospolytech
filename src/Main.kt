@@ -13,6 +13,10 @@ fun main() {
     //Laba 04_01
     val but_3_002 = document.getElementById("3_002") as HTMLButtonElement
     val but_3_003 = document.getElementById("3_003") as HTMLButtonElement
+    val but_3_004 = document.getElementById("3_004") as HTMLButtonElement
+    val but_3_005 = document.getElementById("3_005") as HTMLButtonElement
+    val but_4_002 = document.getElementById("4_002") as HTMLButtonElement
+    val but_4_003 = document.getElementById("4_003") as HTMLButtonElement
 
     but_1_01.addEventListener("click", {
         (document.getElementById("text") as HTMLElement).innerText = lab_01()
@@ -36,6 +40,18 @@ fun main() {
     })
     but_3_003.addEventListener("click", {
         (document.getElementById("text") as HTMLElement).innerText = lab_3_003()
+    })
+    but_3_004.addEventListener("click", {
+        (document.getElementById("text") as HTMLElement).innerText = lab_3_004()
+    })
+    but_3_005.addEventListener("click", {
+        (document.getElementById("text") as HTMLElement).innerText = lab_3_005()
+    })
+    but_4_002.addEventListener("click", {
+        (document.getElementById("text") as HTMLElement).innerText = lab_4_002()
+    })
+    but_4_003.addEventListener("click", {
+        (document.getElementById("text") as HTMLElement).innerText = lab_4_003()
     })
 }
 
@@ -283,3 +299,171 @@ fun lab_3_003(): String {
 
     return prediction
 }
+
+fun lab_3_004(): String {
+    val prediction = """
+        /*
+            Написать код программной модели стека
+        */
+    """.trimIndent()
+
+    class Stack() {
+        val elements: MutableList<Any> = mutableListOf()
+
+        fun isEmpty() = elements.isEmpty()
+
+        fun size() = elements.size
+
+        fun push(item: Any) = elements.add(item)
+
+        fun pop(): Any? {
+            val item = elements.lastOrNull()
+            if (!isEmpty()) {
+                elements.removeAt(elements.size - 1)
+            }
+            return item
+        }
+
+        fun peek(): Any? = elements.lastOrNull()
+
+        override fun toString() = elements.toString()
+    }
+
+    return prediction.plus("""
+        
+        class Stack() {
+        val elements: MutableList<Any> = mutableListOf()
+
+        fun isEmpty() = elements.isEmpty()
+
+        fun size() = elements.size
+
+        fun push(item: Any) = elements.add(item)
+
+        fun pop(): Any? {
+            val item = elements.lastOrNull()
+            if (!isEmpty()) {
+                elements.removeAt(elements.size - 1)
+            }
+            return item
+        }
+
+        fun peek(): Any? = elements.lastOrNull()
+
+        override fun toString() = elements.toString()
+    }
+    """.trimIndent())
+}
+
+fun lab_3_005(): String {
+    val prediction = """
+     /*
+    Написать код программной модели циклической очереди
+    */   
+    """
+
+    return prediction.plus("""
+        
+        class Queue (list:MutableList<Any>){
+
+            var items:MutableList<Any> = list
+
+            fun isEmpty():Boolean = items.isEmpty()
+
+            fun size():Int = items.count()
+
+            override  fun toString() = items.toString()
+
+            fun enqueue(element:Any){
+                items.add(element)
+            }
+
+            fun dequeue():Any?{
+                if (this.isEmpty()){
+                    return null
+                } else {
+                    return items.removeAt(0)
+                }
+            }
+
+            fun peek():Any?{
+                return items[0]
+            }
+        }
+    """.trimIndent())
+}
+
+fun lab_4_002(): String {
+    val prediction = """
+        /*
+            Создать функции двух аргументов:
+                сложения,
+                вычитания,
+                умножения,
+                деления.
+            В каждой функции предусмотреть вывод результата в окне браузера в формате:
+                a + b = 8
+                a - b = 3
+                a * b = 16
+                a / b = 2
+                Попытка деления на 0.
+        */
+    """.trimIndent()
+
+    try {
+        val a: Int = window.prompt("Введите число a:")!!.filterNot { it == ' ' }.toInt()
+        val b: Int = window.prompt("Введите число b:")!!.filterNot { it == ' ' }.toInt()
+
+        fun sum(a: Int, b: Int) = a + b
+        fun minus(a: Int, b: Int) = a - b
+        fun mult(a: Int, b: Int) = a * b
+        fun divide(a: Int, b: Int) = a / b
+
+        val resOfDivide = if (b == 0) "Я не могу сделать это :(" else divide(a, b)
+
+        return prediction.plus("""
+        ____________________
+        
+        a = $a
+        b = $b
+        
+        a + b = ${sum(a, b)}
+        a - b = ${minus(a, b)}
+        a * b = ${mult(a, b)}
+        a / b = $resOfDivide
+    """.trimIndent())
+    }
+    catch (e: Exception) {
+        return "Я не могу сделать с этим арифметические операции :("
+    }
+}
+
+fun lab_4_003(): String {
+    val predicition = """
+        /*
+            Создать функцию одного числового аргумента, решающую следующие задачи:
+                1. Вывод в окно браузера сообщения о знаке числа;
+                2. Проверка на кратность 2 или 3 или 5 или 9 и в случае кратности хотябы одному из означенных чисел, вывод в окно браузера сообщения: "Число делится на 2 или 5 или 3 или 6 или 9 без остатка";
+                3.  Проверка является ли параметр функции простым числом и вывод в окне браузера соответствующей информации.
+        */
+    """.trimIndent()
+
+    val number = window.prompt("Введите ваше число:")!!.filterNot { it == ' ' }.toInt()
+
+    val firstResponse = if (number < 0) "Число отрицательное" else "Число положительное"
+
+    val secondResponse = if (number % 2 == 0 || number % 3 == 0 || number % 5 == 0 || number % 9 == 0) "Число делится на 2 или 5 или 3 или 6 или 9 без остатка" else "Число не делится на 2 или 5 или 3 или 6 или 9 без остатка"
+
+    val thirdResponse = if (secondResponse.equals("Число делится на 2 или 5 или 3 или 6 или 9 без остатка")) "Число не является простым" else "Число является простым"
+
+    return predicition.plus("""
+
+        ________________________
+        
+        $firstResponse
+        $secondResponse
+        $thirdResponse
+    """.trimIndent())
+}
+
+fun 

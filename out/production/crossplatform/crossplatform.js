@@ -14,9 +14,20 @@ if (typeof kotlin === 'undefined') {
   var min = Kotlin.kotlin.collections.min_pbinho$;
   var sum = Kotlin.kotlin.collections.sum_5yd9ji$;
   var IntRange = Kotlin.kotlin.ranges.IntRange;
+  var lastOrNull = Kotlin.kotlin.collections.lastOrNull_2p1efm$;
+  var Kind_CLASS = Kotlin.Kind.CLASS;
+  var ensureNotNull = Kotlin.ensureNotNull;
+  var unboxChar = Kotlin.unboxChar;
+  var toInt = Kotlin.kotlin.text.toInt_pdl1vz$;
+  var Exception = Kotlin.kotlin.Exception;
+  var equals = Kotlin.equals;
   var Array_0 = Array;
   var Random = Kotlin.kotlin.random.Random;
   var random = Kotlin.kotlin.ranges.random_xmiyix$;
+  var ArrayList_init = Kotlin.kotlin.collections.ArrayList_init_287e2$;
+  var StringBuilder_init = Kotlin.kotlin.text.StringBuilder_init;
+  var iterator = Kotlin.kotlin.text.iterator_gw00vp$;
+  var toBoxedChar = Kotlin.toBoxedChar;
   function main$lambda(it) {
     var tmp$;
     (Kotlin.isType(tmp$ = document.getElementById('text'), HTMLElement) ? tmp$ : throwCCE()).innerText = lab_01();
@@ -52,8 +63,28 @@ if (typeof kotlin === 'undefined') {
     (Kotlin.isType(tmp$ = document.getElementById('text'), HTMLElement) ? tmp$ : throwCCE()).innerText = lab_3_003();
     return Unit;
   }
+  function main$lambda_6(it) {
+    var tmp$;
+    (Kotlin.isType(tmp$ = document.getElementById('text'), HTMLElement) ? tmp$ : throwCCE()).innerText = lab_3_004();
+    return Unit;
+  }
+  function main$lambda_7(it) {
+    var tmp$;
+    (Kotlin.isType(tmp$ = document.getElementById('text'), HTMLElement) ? tmp$ : throwCCE()).innerText = lab_3_005();
+    return Unit;
+  }
+  function main$lambda_8(it) {
+    var tmp$;
+    (Kotlin.isType(tmp$ = document.getElementById('text'), HTMLElement) ? tmp$ : throwCCE()).innerText = lab_4_002();
+    return Unit;
+  }
+  function main$lambda_9(it) {
+    var tmp$;
+    (Kotlin.isType(tmp$ = document.getElementById('text'), HTMLElement) ? tmp$ : throwCCE()).innerText = lab_4_003();
+    return Unit;
+  }
   function main() {
-    var tmp$, tmp$_0, tmp$_1, tmp$_2, tmp$_3, tmp$_4, tmp$_5;
+    var tmp$, tmp$_0, tmp$_1, tmp$_2, tmp$_3, tmp$_4, tmp$_5, tmp$_6, tmp$_7, tmp$_8, tmp$_9;
     var but_1_01 = Kotlin.isType(tmp$ = document.getElementById('01'), HTMLButtonElement) ? tmp$ : throwCCE();
     var but_1_02 = Kotlin.isType(tmp$_0 = document.getElementById('02'), HTMLButtonElement) ? tmp$_0 : throwCCE();
     var but_1_02_01 = Kotlin.isType(tmp$_1 = document.getElementById('02_01'), HTMLButtonElement) ? tmp$_1 : throwCCE();
@@ -61,6 +92,10 @@ if (typeof kotlin === 'undefined') {
     var but_1_04 = Kotlin.isType(tmp$_3 = document.getElementById('04'), HTMLButtonElement) ? tmp$_3 : throwCCE();
     var but_3_002 = Kotlin.isType(tmp$_4 = document.getElementById('3_002'), HTMLButtonElement) ? tmp$_4 : throwCCE();
     var but_3_003 = Kotlin.isType(tmp$_5 = document.getElementById('3_003'), HTMLButtonElement) ? tmp$_5 : throwCCE();
+    var but_3_004 = Kotlin.isType(tmp$_6 = document.getElementById('3_004'), HTMLButtonElement) ? tmp$_6 : throwCCE();
+    var but_3_005 = Kotlin.isType(tmp$_7 = document.getElementById('3_005'), HTMLButtonElement) ? tmp$_7 : throwCCE();
+    var but_4_002 = Kotlin.isType(tmp$_8 = document.getElementById('4_002'), HTMLButtonElement) ? tmp$_8 : throwCCE();
+    var but_4_003 = Kotlin.isType(tmp$_9 = document.getElementById('4_003'), HTMLButtonElement) ? tmp$_9 : throwCCE();
     but_1_01.addEventListener('click', main$lambda);
     but_1_02.addEventListener('click', main$lambda_0);
     but_1_02_01.addEventListener('click', main$lambda_1);
@@ -68,6 +103,10 @@ if (typeof kotlin === 'undefined') {
     but_1_04.addEventListener('click', main$lambda_3);
     but_3_002.addEventListener('click', main$lambda_4);
     but_3_003.addEventListener('click', main$lambda_5);
+    but_3_004.addEventListener('click', main$lambda_6);
+    but_3_005.addEventListener('click', main$lambda_7);
+    but_4_002.addEventListener('click', main$lambda_8);
+    but_4_003.addEventListener('click', main$lambda_9);
   }
   function lab_01() {
     var prediction = trimIndent('\n/*\n\u0414\u043B\u044F \u0434\u0432\u0443\u0445 \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0445 \u0432\u044B\u043F\u043E\u043B\u043D\u0438\u0442\u044C \u0432\u0441\u0435 \u0432\u0438\u0434\u044B \u0430\u0440\u0438\u0444\u043C\u0435\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0445 \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u0439\n\u0438 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442\u044B \u0432\u044B\u0432\u0435\u0441\u0442\u0438 \u0432 \u043E\u043A\u043D\u0435 \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0430\n*/\n    ');
@@ -153,6 +192,108 @@ if (typeof kotlin === 'undefined') {
     }
     return prediction;
   }
+  function lab_3_004$Stack() {
+    this.elements = ArrayList_init();
+  }
+  lab_3_004$Stack.prototype.isEmpty = function () {
+    return this.elements.isEmpty();
+  };
+  lab_3_004$Stack.prototype.size = function () {
+    return this.elements.size;
+  };
+  lab_3_004$Stack.prototype.push_za3rmp$ = function (item) {
+    return this.elements.add_11rb$(item);
+  };
+  lab_3_004$Stack.prototype.pop = function () {
+    var item = lastOrNull(this.elements);
+    if (!this.isEmpty()) {
+      this.elements.removeAt_za3lpa$(this.elements.size - 1 | 0);
+    }return item;
+  };
+  lab_3_004$Stack.prototype.peek = function () {
+    return lastOrNull(this.elements);
+  };
+  lab_3_004$Stack.prototype.toString = function () {
+    return this.elements.toString();
+  };
+  lab_3_004$Stack.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'Stack',
+    interfaces: []
+  };
+  function lab_3_004() {
+    var prediction = trimIndent('\n        /*\n            \u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u043A\u043E\u0434 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043D\u043E\u0439 \u043C\u043E\u0434\u0435\u043B\u0438 \u0441\u0442\u0435\u043A\u0430\n        */\n    ');
+    return prediction + trimIndent('\n        \n        class Stack() {\n        val elements: MutableList<Any> = mutableListOf()\n\n        fun isEmpty() = elements.isEmpty()\n\n        fun size() = elements.size\n\n        fun push(item: Any) = elements.add(item)\n\n        fun pop(): Any? {\n            val item = elements.lastOrNull()\n            if (!isEmpty()) {\n                elements.removeAt(elements.size - 1)\n            }\n            return item\n        }\n\n        fun peek(): Any? = elements.lastOrNull()\n\n        override fun toString() = elements.toString()\n    }\n    ');
+  }
+  function lab_3_005() {
+    var prediction = '\n     /*\n    \u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u043A\u043E\u0434 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043D\u043E\u0439 \u043C\u043E\u0434\u0435\u043B\u0438 \u0446\u0438\u043A\u043B\u0438\u0447\u0435\u0441\u043A\u043E\u0439 \u043E\u0447\u0435\u0440\u0435\u0434\u0438\n    */   \n    ';
+    return prediction + trimIndent('\n        \n        class Queue (list:MutableList<Any>){\n\n            var items:MutableList<Any> = list\n\n            fun isEmpty():Boolean = items.isEmpty()\n\n            fun size():Int = items.count()\n\n            override  fun toString() = items.toString()\n\n            fun enqueue(element:Any){\n                items.add(element)\n            }\n\n            fun dequeue():Any?{\n                if (this.isEmpty()){\n                    return null\n                } else {\n                    return items.removeAt(0)\n                }\n            }\n\n            fun peek():Any?{\n                return items[0]\n            }\n        }\n    ');
+  }
+  function lab_4_002$sum(a, b) {
+    return a + b | 0;
+  }
+  function lab_4_002$minus(a, b) {
+    return a - b | 0;
+  }
+  function lab_4_002$mult(a, b) {
+    return Kotlin.imul(a, b);
+  }
+  function lab_4_002$divide(a, b) {
+    return a / b | 0;
+  }
+  function lab_4_002() {
+    var prediction = trimIndent('\n        /*\n            \u0421\u043E\u0437\u0434\u0430\u0442\u044C \u0444\u0443\u043D\u043A\u0446\u0438\u0438 \u0434\u0432\u0443\u0445 \u0430\u0440\u0433\u0443\u043C\u0435\u043D\u0442\u043E\u0432:\n                \u0441\u043B\u043E\u0436\u0435\u043D\u0438\u044F,\n                \u0432\u044B\u0447\u0438\u0442\u0430\u043D\u0438\u044F,\n                \u0443\u043C\u043D\u043E\u0436\u0435\u043D\u0438\u044F,\n                \u0434\u0435\u043B\u0435\u043D\u0438\u044F.\n            \u0412 \u043A\u0430\u0436\u0434\u043E\u0439 \u0444\u0443\u043D\u043A\u0446\u0438\u0438 \u043F\u0440\u0435\u0434\u0443\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C \u0432\u044B\u0432\u043E\u0434 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442\u0430 \u0432 \u043E\u043A\u043D\u0435 \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0430 \u0432 \u0444\u043E\u0440\u043C\u0430\u0442\u0435:\n                a + b = 8\n                a - b = 3\n                a * b = 16\n                a / b = 2\n                \u041F\u043E\u043F\u044B\u0442\u043A\u0430 \u0434\u0435\u043B\u0435\u043D\u0438\u044F \u043D\u0430 0.\n        */\n    ');
+    try {
+      var $receiver = ensureNotNull(window.prompt('\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0447\u0438\u0441\u043B\u043E a:'));
+      var destination = StringBuilder_init();
+      var tmp$;
+      tmp$ = iterator($receiver);
+      while (tmp$.hasNext()) {
+        var element = unboxChar(tmp$.next());
+        if (!(unboxChar(toBoxedChar(element)) === 32))
+          destination.append_s8itvh$(element);
+      }
+      var a = toInt(destination.toString());
+      var $receiver_0 = ensureNotNull(window.prompt('\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0447\u0438\u0441\u043B\u043E b:'));
+      var destination_0 = StringBuilder_init();
+      var tmp$_0;
+      tmp$_0 = iterator($receiver_0);
+      while (tmp$_0.hasNext()) {
+        var element_0 = unboxChar(tmp$_0.next());
+        if (!(unboxChar(toBoxedChar(element_0)) === 32))
+          destination_0.append_s8itvh$(element_0);
+      }
+      var b = toInt(destination_0.toString());
+      var sum = lab_4_002$sum;
+      var minus = lab_4_002$minus;
+      var mult = lab_4_002$mult;
+      var divide = lab_4_002$divide;
+      var resOfDivide = b === 0 ? '\u042F \u043D\u0435 \u043C\u043E\u0433\u0443 \u0441\u0434\u0435\u043B\u0430\u0442\u044C \u044D\u0442\u043E :(' : divide(a, b);
+      return prediction + trimIndent('\n' + '        ____________________' + '\n' + '        ' + '\n' + '        a = ' + a + '\n' + '        b = ' + b + '\n' + '        ' + '\n' + '        a + b = ' + sum(a, b) + '\n' + '        a - b = ' + minus(a, b) + '\n' + '        a * b = ' + mult(a, b) + '\n' + '        a / b = ' + resOfDivide.toString() + '\n' + '    ');
+    } catch (e) {
+      if (Kotlin.isType(e, Exception)) {
+        return '\u042F \u043D\u0435 \u043C\u043E\u0433\u0443 \u0441\u0434\u0435\u043B\u0430\u0442\u044C \u0441 \u044D\u0442\u0438\u043C \u0430\u0440\u0438\u0444\u043C\u0435\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u0438 :(';
+      } else
+        throw e;
+    }
+  }
+  function lab_4_003() {
+    var predicition = trimIndent('\n        /*\n            \u0421\u043E\u0437\u0434\u0430\u0442\u044C \u0444\u0443\u043D\u043A\u0446\u0438\u044E \u043E\u0434\u043D\u043E\u0433\u043E \u0447\u0438\u0441\u043B\u043E\u0432\u043E\u0433\u043E \u0430\u0440\u0433\u0443\u043C\u0435\u043D\u0442\u0430, \u0440\u0435\u0448\u0430\u044E\u0449\u0443\u044E \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0435 \u0437\u0430\u0434\u0430\u0447\u0438:\n                1. \u0412\u044B\u0432\u043E\u0434 \u0432 \u043E\u043A\u043D\u043E \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0430 \u0441\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u044F \u043E \u0437\u043D\u0430\u043A\u0435 \u0447\u0438\u0441\u043B\u0430;\n                2. \u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043D\u0430 \u043A\u0440\u0430\u0442\u043D\u043E\u0441\u0442\u044C 2 \u0438\u043B\u0438 3 \u0438\u043B\u0438 5 \u0438\u043B\u0438 9 \u0438 \u0432 \u0441\u043B\u0443\u0447\u0430\u0435 \u043A\u0440\u0430\u0442\u043D\u043E\u0441\u0442\u0438 \u0445\u043E\u0442\u044F\u0431\u044B \u043E\u0434\u043D\u043E\u043C\u0443 \u0438\u0437 \u043E\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B, \u0432\u044B\u0432\u043E\u0434 \u0432 \u043E\u043A\u043D\u043E \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0430 \u0441\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u044F: "\u0427\u0438\u0441\u043B\u043E \u0434\u0435\u043B\u0438\u0442\u0441\u044F \u043D\u0430 2 \u0438\u043B\u0438 5 \u0438\u043B\u0438 3 \u0438\u043B\u0438 6 \u0438\u043B\u0438 9 \u0431\u0435\u0437 \u043E\u0441\u0442\u0430\u0442\u043A\u0430";\n                3.  \u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043B\u0438 \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440 \u0444\u0443\u043D\u043A\u0446\u0438\u0438 \u043F\u0440\u043E\u0441\u0442\u044B\u043C \u0447\u0438\u0441\u043B\u043E\u043C \u0438 \u0432\u044B\u0432\u043E\u0434 \u0432 \u043E\u043A\u043D\u0435 \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0430 \u0441\u043E\u043E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044E\u0449\u0435\u0439 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438.\n        */\n    ');
+    var $receiver = ensureNotNull(window.prompt('\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u0447\u0438\u0441\u043B\u043E:'));
+    var destination = StringBuilder_init();
+    var tmp$;
+    tmp$ = iterator($receiver);
+    while (tmp$.hasNext()) {
+      var element = unboxChar(tmp$.next());
+      if (!(unboxChar(toBoxedChar(element)) === 32))
+        destination.append_s8itvh$(element);
+    }
+    var number = toInt(destination.toString());
+    var firstResponse = number < 0 ? '\u0427\u0438\u0441\u043B\u043E \u043E\u0442\u0440\u0438\u0446\u0430\u0442\u0435\u043B\u044C\u043D\u043E\u0435' : '\u0427\u0438\u0441\u043B\u043E \u043F\u043E\u043B\u043E\u0436\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0435';
+    var secondResponse = number % 2 === 0 || number % 3 === 0 || number % 5 === 0 || number % 9 === 0 ? '\u0427\u0438\u0441\u043B\u043E \u0434\u0435\u043B\u0438\u0442\u0441\u044F \u043D\u0430 2 \u0438\u043B\u0438 5 \u0438\u043B\u0438 3 \u0438\u043B\u0438 6 \u0438\u043B\u0438 9 \u0431\u0435\u0437 \u043E\u0441\u0442\u0430\u0442\u043A\u0430' : '\u0427\u0438\u0441\u043B\u043E \u043D\u0435 \u0434\u0435\u043B\u0438\u0442\u0441\u044F \u043D\u0430 2 \u0438\u043B\u0438 5 \u0438\u043B\u0438 3 \u0438\u043B\u0438 6 \u0438\u043B\u0438 9 \u0431\u0435\u0437 \u043E\u0441\u0442\u0430\u0442\u043A\u0430';
+    var thirdResponse = equals(secondResponse, '\u0427\u0438\u0441\u043B\u043E \u0434\u0435\u043B\u0438\u0442\u0441\u044F \u043D\u0430 2 \u0438\u043B\u0438 5 \u0438\u043B\u0438 3 \u0438\u043B\u0438 6 \u0438\u043B\u0438 9 \u0431\u0435\u0437 \u043E\u0441\u0442\u0430\u0442\u043A\u0430') ? '\u0427\u0438\u0441\u043B\u043E \u043D\u0435 \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043F\u0440\u043E\u0441\u0442\u044B\u043C' : '\u0427\u0438\u0441\u043B\u043E \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043F\u0440\u043E\u0441\u0442\u044B\u043C';
+    return predicition + trimIndent('\n' + '\n' + '        ________________________' + '\n' + '        ' + '\n' + '        ' + firstResponse + '\n' + '        ' + secondResponse + '\n' + '        ' + thirdResponse + '\n' + '    ');
+  }
   _.main = main;
   _.lab_01 = lab_01;
   _.lab_02 = lab_02;
@@ -161,6 +302,10 @@ if (typeof kotlin === 'undefined') {
   _.lab_1_04 = lab_1_04;
   _.lab_3_002 = lab_3_002;
   _.lab_3_003 = lab_3_003;
+  _.lab_3_004 = lab_3_004;
+  _.lab_3_005 = lab_3_005;
+  _.lab_4_002 = lab_4_002;
+  _.lab_4_003 = lab_4_003;
   main();
   Kotlin.defineModule('crossplatform', _);
   return _;
