@@ -465,5 +465,3 @@ fun lab_4_003(): String {
         $thirdResponse
     """.trimIndent())
 }
-
-fun 
