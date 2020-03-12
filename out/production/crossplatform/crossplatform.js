@@ -5,6 +5,8 @@ if (typeof kotlin === 'undefined') {
   var throwCCE = Kotlin.throwCCE;
   var Unit = Kotlin.kotlin.Unit;
   var trimIndent = Kotlin.kotlin.text.trimIndent_pdl1vz$;
+  var lastOrNull = Kotlin.kotlin.collections.lastOrNull_2p1efm$;
+  var Kind_CLASS = Kotlin.Kind.CLASS;
   var trimMargin = Kotlin.kotlin.text.trimMargin_rjktp$;
   var kotlin_js_internal_IntCompanionObject = Kotlin.kotlin.js.internal.IntCompanionObject;
   var average = Kotlin.kotlin.collections.average_5yd9ji$;
@@ -14,17 +16,15 @@ if (typeof kotlin === 'undefined') {
   var min = Kotlin.kotlin.collections.min_pbinho$;
   var sum = Kotlin.kotlin.collections.sum_5yd9ji$;
   var IntRange = Kotlin.kotlin.ranges.IntRange;
-  var lastOrNull = Kotlin.kotlin.collections.lastOrNull_2p1efm$;
-  var Kind_CLASS = Kotlin.Kind.CLASS;
   var ensureNotNull = Kotlin.ensureNotNull;
   var unboxChar = Kotlin.unboxChar;
   var toInt = Kotlin.kotlin.text.toInt_pdl1vz$;
   var Exception = Kotlin.kotlin.Exception;
-  var equals = Kotlin.equals;
+  var abs = Kotlin.kotlin.math.abs_za3lpa$;
+  var ArrayList_init = Kotlin.kotlin.collections.ArrayList_init_287e2$;
   var Array_0 = Array;
   var Random = Kotlin.kotlin.random.Random;
   var random = Kotlin.kotlin.ranges.random_xmiyix$;
-  var ArrayList_init = Kotlin.kotlin.collections.ArrayList_init_287e2$;
   var StringBuilder_init = Kotlin.kotlin.text.StringBuilder_init;
   var iterator = Kotlin.kotlin.text.iterator_gw00vp$;
   var toBoxedChar = Kotlin.toBoxedChar;
@@ -83,8 +83,44 @@ if (typeof kotlin === 'undefined') {
     (Kotlin.isType(tmp$ = document.getElementById('text'), HTMLElement) ? tmp$ : throwCCE()).innerText = lab_4_003();
     return Unit;
   }
+  function main$lambda_10(it) {
+    var tmp$;
+    (Kotlin.isType(tmp$ = document.getElementById('text'), HTMLElement) ? tmp$ : throwCCE()).innerText = lab_4_004();
+    return Unit;
+  }
+  function main$lambda$lambda(closure$stackList) {
+    return function (it) {
+      closure$stackList.v.elements.add_11rb$('');
+      showList(closure$stackList.v);
+      return Unit;
+    };
+  }
+  function main$lambda$lambda_0(closure$stackList, closure$canvas) {
+    return function (it) {
+      var tmp$;
+      closure$stackList.v.elements.removeAt_za3lpa$(0);
+      tmp$ = closure$stackList.v.elements.size;
+      for (var i = 0; i < tmp$; i++) {
+        drawElem(closure$canvas);
+      }
+      return Unit;
+    };
+  }
+  function main$lambda_11(it) {
+    var tmp$, tmp$_0, tmp$_1, tmp$_2, tmp$_3;
+    (Kotlin.isType(tmp$ = document.getElementById('text'), HTMLElement) ? tmp$ : throwCCE()).innerText = '';
+    (Kotlin.isType(tmp$_0 = document.getElementById('text'), HTMLElement) ? tmp$_0 : throwCCE()).innerHTML = (Kotlin.isType(tmp$_0 = document.getElementById('text'), HTMLElement) ? tmp$_0 : throwCCE()).innerHTML + trimIndent('\n            <button id="push"\n            style = "\n            color: black;\n            background-color: darkgray;\n            padding: 15px 32px;\n            text-align: center;\n            text-decoration: none;\n            display: inline-block;\n            font-size: 16px;\n            cursor: pointer;\n            margin: 10px;\n            border: 2px solid black;\n            "\n            ">Push<\/button>\n            \n            <button id="pop"\n            style = "\n            color: black;\n            background-color: darkgray;\n            padding: 15px 32px;\n            text-align: center;\n            text-decoration: none;\n            display: inline-block;\n            font-size: 16px;\n            cursor: pointer;\n            margin: 10px 0px;\n            border: 2px solid black;\n            ">Pop<\/button>\n            \n            <canvas id="canvas"><\/canvas>\n        ');
+    var pushButton = Kotlin.isType(tmp$_1 = document.getElementById('push'), HTMLButtonElement) ? tmp$_1 : throwCCE();
+    var popButton = Kotlin.isType(tmp$_2 = document.getElementById('pop'), HTMLButtonElement) ? tmp$_2 : throwCCE();
+    var canvas = Kotlin.isType(tmp$_3 = document.getElementById('canvas'), HTMLCanvasElement) ? tmp$_3 : throwCCE();
+    var stackList = {v: new Stack()};
+    stackList.v.elements;
+    pushButton.addEventListener('click', main$lambda$lambda(stackList));
+    popButton.addEventListener('click', main$lambda$lambda_0(stackList, canvas));
+    return Unit;
+  }
   function main() {
-    var tmp$, tmp$_0, tmp$_1, tmp$_2, tmp$_3, tmp$_4, tmp$_5, tmp$_6, tmp$_7, tmp$_8, tmp$_9;
+    var tmp$, tmp$_0, tmp$_1, tmp$_2, tmp$_3, tmp$_4, tmp$_5, tmp$_6, tmp$_7, tmp$_8, tmp$_9, tmp$_10, tmp$_11;
     var but_1_01 = Kotlin.isType(tmp$ = document.getElementById('01'), HTMLButtonElement) ? tmp$ : throwCCE();
     var but_1_02 = Kotlin.isType(tmp$_0 = document.getElementById('02'), HTMLButtonElement) ? tmp$_0 : throwCCE();
     var but_1_02_01 = Kotlin.isType(tmp$_1 = document.getElementById('02_01'), HTMLButtonElement) ? tmp$_1 : throwCCE();
@@ -96,6 +132,8 @@ if (typeof kotlin === 'undefined') {
     var but_3_005 = Kotlin.isType(tmp$_7 = document.getElementById('3_005'), HTMLButtonElement) ? tmp$_7 : throwCCE();
     var but_4_002 = Kotlin.isType(tmp$_8 = document.getElementById('4_002'), HTMLButtonElement) ? tmp$_8 : throwCCE();
     var but_4_003 = Kotlin.isType(tmp$_9 = document.getElementById('4_003'), HTMLButtonElement) ? tmp$_9 : throwCCE();
+    var but_4_004 = Kotlin.isType(tmp$_10 = document.getElementById('4_004'), HTMLButtonElement) ? tmp$_10 : throwCCE();
+    var but_6_006 = Kotlin.isType(tmp$_11 = document.getElementById('6_006'), HTMLButtonElement) ? tmp$_11 : throwCCE();
     but_1_01.addEventListener('click', main$lambda);
     but_1_02.addEventListener('click', main$lambda_0);
     but_1_02_01.addEventListener('click', main$lambda_1);
@@ -107,7 +145,52 @@ if (typeof kotlin === 'undefined') {
     but_3_005.addEventListener('click', main$lambda_7);
     but_4_002.addEventListener('click', main$lambda_8);
     but_4_003.addEventListener('click', main$lambda_9);
+    but_4_004.addEventListener('click', main$lambda_10);
+    but_6_006.addEventListener('click', main$lambda_11);
   }
+  function showList(list) {
+    var tmp$, tmp$_0;
+    var canvas = Kotlin.isType(tmp$ = document.getElementById('canvas'), HTMLCanvasElement) ? tmp$ : throwCCE();
+    tmp$_0 = list.size();
+    for (var i = 0; i < tmp$_0; i++) {
+      drawElem(canvas);
+    }
+  }
+  function drawElem($receiver) {
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'green';
+    ctx.fillRect(10, 10, 100, 100);
+  }
+  function Stack() {
+    this.elements = ArrayList_init();
+  }
+  Stack.prototype.isEmpty = function () {
+    return this.elements.isEmpty();
+  };
+  Stack.prototype.size = function () {
+    return this.elements.size;
+  };
+  Stack.prototype.push_za3rmp$ = function (item) {
+    return this.elements.add_11rb$(item);
+  };
+  Stack.prototype.pop = function () {
+    var item = lastOrNull(this.elements);
+    if (!this.isEmpty()) {
+      this.elements.removeAt_za3lpa$(this.elements.size - 1 | 0);
+    }return item;
+  };
+  Stack.prototype.peek = function () {
+    return lastOrNull(this.elements);
+  };
+  Stack.prototype.toString = function () {
+    return this.elements.toString();
+  };
+  Stack.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'Stack',
+    interfaces: []
+  };
   function lab_01() {
     var prediction = trimIndent('\n/*\n\u0414\u043B\u044F \u0434\u0432\u0443\u0445 \u043F\u0435\u0440\u0435\u043C\u0435\u043D\u043D\u044B\u0445 \u0432\u044B\u043F\u043E\u043B\u043D\u0438\u0442\u044C \u0432\u0441\u0435 \u0432\u0438\u0434\u044B \u0430\u0440\u0438\u0444\u043C\u0435\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0445 \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u0439\n\u0438 \u0440\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442\u044B \u0432\u044B\u0432\u0435\u0441\u0442\u0438 \u0432 \u043E\u043A\u043D\u0435 \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0430\n*/\n    ');
     var a = 10;
@@ -223,7 +306,7 @@ if (typeof kotlin === 'undefined') {
   };
   function lab_3_004() {
     var prediction = trimIndent('\n        /*\n            \u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u043A\u043E\u0434 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043D\u043E\u0439 \u043C\u043E\u0434\u0435\u043B\u0438 \u0441\u0442\u0435\u043A\u0430\n        */\n    ');
-    return prediction + trimIndent('\n        \n        class Stack() {\n        val elements: MutableList<Any> = mutableListOf()\n\n        fun isEmpty() = elements.isEmpty()\n\n        fun size() = elements.size\n\n        fun push(item: Any) = elements.add(item)\n\n        fun pop(): Any? {\n            val item = elements.lastOrNull()\n            if (!isEmpty()) {\n                elements.removeAt(elements.size - 1)\n            }\n            return item\n        }\n\n        fun peek(): Any? = elements.lastOrNull()\n\n        override fun toString() = elements.toString()\n    }\n    ');
+    return prediction + trimIndent('\n        \n        class Stack() {\n        val elements: MutableList<Any> = mutableListOf()\n\n        fun isEmpty() = elements.isEmpty()\n\n        fun size() = elements.size\n\n        fun push(item: Any) = elements.add(item)\n\n        fun pop(): Any? {\n            val item = elements.last     OrNull()\n            if (!isEmpty()) {\n                elements.removeAt(elements.size - 1)\n            }\n            return item\n        }\n\n        fun peek(): Any? = elements.lastOrNull()\n\n        override fun toString() = elements.toString()\n    }\n    ');
   }
   function lab_3_005() {
     var prediction = '\n     /*\n    \u041D\u0430\u043F\u0438\u0441\u0430\u0442\u044C \u043A\u043E\u0434 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u043D\u043E\u0439 \u043C\u043E\u0434\u0435\u043B\u0438 \u0446\u0438\u043A\u043B\u0438\u0447\u0435\u0441\u043A\u043E\u0439 \u043E\u0447\u0435\u0440\u0435\u0434\u0438\n    */   \n    ';
@@ -277,6 +360,17 @@ if (typeof kotlin === 'undefined') {
         throw e;
     }
   }
+  function lab_4_003$thirdResponseChecker(num) {
+    var tmp$;
+    var flag = 0;
+    tmp$ = abs(num);
+    for (var i = 2; i < tmp$; i++) {
+      if (num % i === 0) {
+        flag = flag + 1 | 0;
+        break;
+      }}
+    return flag > 0;
+  }
   function lab_4_003() {
     var predicition = trimIndent('\n        /*\n            \u0421\u043E\u0437\u0434\u0430\u0442\u044C \u0444\u0443\u043D\u043A\u0446\u0438\u044E \u043E\u0434\u043D\u043E\u0433\u043E \u0447\u0438\u0441\u043B\u043E\u0432\u043E\u0433\u043E \u0430\u0440\u0433\u0443\u043C\u0435\u043D\u0442\u0430, \u0440\u0435\u0448\u0430\u044E\u0449\u0443\u044E \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0435 \u0437\u0430\u0434\u0430\u0447\u0438:\n                1. \u0412\u044B\u0432\u043E\u0434 \u0432 \u043E\u043A\u043D\u043E \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0430 \u0441\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u044F \u043E \u0437\u043D\u0430\u043A\u0435 \u0447\u0438\u0441\u043B\u0430;\n                2. \u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043D\u0430 \u043A\u0440\u0430\u0442\u043D\u043E\u0441\u0442\u044C 2 \u0438\u043B\u0438 3 \u0438\u043B\u0438 5 \u0438\u043B\u0438 9 \u0438 \u0432 \u0441\u043B\u0443\u0447\u0430\u0435 \u043A\u0440\u0430\u0442\u043D\u043E\u0441\u0442\u0438 \u0445\u043E\u0442\u044F\u0431\u044B \u043E\u0434\u043D\u043E\u043C\u0443 \u0438\u0437 \u043E\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044B\u0445 \u0447\u0438\u0441\u0435\u043B, \u0432\u044B\u0432\u043E\u0434 \u0432 \u043E\u043A\u043D\u043E \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0430 \u0441\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u044F: "\u0427\u0438\u0441\u043B\u043E \u0434\u0435\u043B\u0438\u0442\u0441\u044F \u043D\u0430 2 \u0438\u043B\u0438 5 \u0438\u043B\u0438 3 \u0438\u043B\u0438 6 \u0438\u043B\u0438 9 \u0431\u0435\u0437 \u043E\u0441\u0442\u0430\u0442\u043A\u0430";\n                3.  \u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043B\u0438 \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440 \u0444\u0443\u043D\u043A\u0446\u0438\u0438 \u043F\u0440\u043E\u0441\u0442\u044B\u043C \u0447\u0438\u0441\u043B\u043E\u043C \u0438 \u0432\u044B\u0432\u043E\u0434 \u0432 \u043E\u043A\u043D\u0435 \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0430 \u0441\u043E\u043E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044E\u0449\u0435\u0439 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438.\n        */\n    ');
     var $receiver = ensureNotNull(window.prompt('\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u0447\u0438\u0441\u043B\u043E:'));
@@ -291,10 +385,17 @@ if (typeof kotlin === 'undefined') {
     var number = toInt(destination.toString());
     var firstResponse = number < 0 ? '\u0427\u0438\u0441\u043B\u043E \u043E\u0442\u0440\u0438\u0446\u0430\u0442\u0435\u043B\u044C\u043D\u043E\u0435' : '\u0427\u0438\u0441\u043B\u043E \u043F\u043E\u043B\u043E\u0436\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0435';
     var secondResponse = number % 2 === 0 || number % 3 === 0 || number % 5 === 0 || number % 9 === 0 ? '\u0427\u0438\u0441\u043B\u043E \u0434\u0435\u043B\u0438\u0442\u0441\u044F \u043D\u0430 2 \u0438\u043B\u0438 5 \u0438\u043B\u0438 3 \u0438\u043B\u0438 6 \u0438\u043B\u0438 9 \u0431\u0435\u0437 \u043E\u0441\u0442\u0430\u0442\u043A\u0430' : '\u0427\u0438\u0441\u043B\u043E \u043D\u0435 \u0434\u0435\u043B\u0438\u0442\u0441\u044F \u043D\u0430 2 \u0438\u043B\u0438 5 \u0438\u043B\u0438 3 \u0438\u043B\u0438 6 \u0438\u043B\u0438 9 \u0431\u0435\u0437 \u043E\u0441\u0442\u0430\u0442\u043A\u0430';
-    var thirdResponse = equals(secondResponse, '\u0427\u0438\u0441\u043B\u043E \u0434\u0435\u043B\u0438\u0442\u0441\u044F \u043D\u0430 2 \u0438\u043B\u0438 5 \u0438\u043B\u0438 3 \u0438\u043B\u0438 6 \u0438\u043B\u0438 9 \u0431\u0435\u0437 \u043E\u0441\u0442\u0430\u0442\u043A\u0430') ? '\u0427\u0438\u0441\u043B\u043E \u043D\u0435 \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043F\u0440\u043E\u0441\u0442\u044B\u043C' : '\u0427\u0438\u0441\u043B\u043E \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043F\u0440\u043E\u0441\u0442\u044B\u043C';
+    var thirdResponseChecker = lab_4_003$thirdResponseChecker;
+    var thirdResponse = thirdResponseChecker(number) ? '\u0427\u0438\u0441\u043B\u043E \u043D\u0435 \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043F\u0440\u043E\u0441\u0442\u044B\u043C' : '\u0427\u0438\u0441\u043B\u043E \u044F\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043F\u0440\u043E\u0441\u0442\u044B\u043C';
     return predicition + trimIndent('\n' + '\n' + '        ________________________' + '\n' + '        ' + '\n' + '        ' + firstResponse + '\n' + '        ' + secondResponse + '\n' + '        ' + thirdResponse + '\n' + '    ');
   }
+  function lab_4_004() {
+    var prediction = trimIndent('\n        /*\n            \u0414\u043B\u044F \u0437\u0430\u0434\u0430\u0447 \u043F\u0440\u043E\u0433\u0430\u043C\u043C\u043D\u043E\u0433\u043E \u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u044F \u0441\u0442\u0435\u043A\u0430 \u0438 \u0446\u0438\u043A\u043B\u0438\u0447\u0435\u0441\u043A\u043E\u0439 \u043E\u0447\u0435\u0440\u0435\u0434\u0438 \u043E\u0444\u043E\u0440\u043C\u0438\u0442\u044C \u0432 \u0432\u0438\u0434\u0435 \u0444\u0443\u043D\u043A\u0446\u0438\u0439:\n                \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u0430 \u0432 \u0441\u0442\u0435\u043A\n                \u0438\u0437\u0432\u043B\u0435\u0447\u0435\u043D\u0438\u0435 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u0430 \u0438\u0437 \u0441\u0442\u0435\u043A\u0430\n                \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u0430 \u0432 \u043E\u0447\u0435\u0440\u0435\u0434\u044C\n                \u0438\u0437\u0432\u043B\u0435\u0447\u0435\u043D\u0438\u0435 \u044D\u043B\u0435\u043C\u0435\u043D\u0442\u0430 \u0438\u0437 \u043E\u0447\u0435\u0440\u0435\u0434\u0438\n        */\n    ');
+    return prediction + trimIndent('\n        _____________\n        \n        \u0412 \u043F\u0440\u043E\u0448\u043B\u044B\u0445 \u0440\u0435\u0430\u043B\u0438\u0437\u0430\u0446\u0438\u044F\u0445 \u044D\u0442\u0438 \u0444\u0443\u043D\u043A\u0446\u0438\u0438 \u0443\u0436\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u044B.\n    ');
+  }
   _.main = main;
+  _.showList_1br23s$ = showList;
+  _.Stack = Stack;
   _.lab_01 = lab_01;
   _.lab_02 = lab_02;
   _.lab_02_01 = lab_02_01;
@@ -306,6 +407,7 @@ if (typeof kotlin === 'undefined') {
   _.lab_3_005 = lab_3_005;
   _.lab_4_002 = lab_4_002;
   _.lab_4_003 = lab_4_003;
+  _.lab_4_004 = lab_4_004;
   main();
   Kotlin.defineModule('crossplatform', _);
   return _;

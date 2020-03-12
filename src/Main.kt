@@ -1,6 +1,7 @@
 import kotlin.browser.*
 import org.w3c.dom.*
 import kotlin.math.PI
+import kotlin.math.abs
 
 
 fun main() {
@@ -17,6 +18,8 @@ fun main() {
     val but_3_005 = document.getElementById("3_005") as HTMLButtonElement
     val but_4_002 = document.getElementById("4_002") as HTMLButtonElement
     val but_4_003 = document.getElementById("4_003") as HTMLButtonElement
+    val but_4_004 = document.getElementById("4_004") as HTMLButtonElement
+    val but_6_006 = document.getElementById("6_006") as HTMLButtonElement
 
     but_1_01.addEventListener("click", {
         (document.getElementById("text") as HTMLElement).innerText = lab_01()
@@ -53,6 +56,107 @@ fun main() {
     but_4_003.addEventListener("click", {
         (document.getElementById("text") as HTMLElement).innerText = lab_4_003()
     })
+    but_4_004.addEventListener("click", {
+        (document.getElementById("text") as HTMLElement).innerText = lab_4_004()
+    })
+    but_6_006.addEventListener("click", {
+        (document.getElementById("text") as HTMLElement).innerText = ""
+        (document.getElementById("text") as HTMLElement).innerHTML += """
+            <button id="push"
+            style = "
+            color: black;
+            background-color: darkgray;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            border: 2px solid black;
+            "
+            ">Push</button>
+            
+            <button id="pop"
+            style = "
+            color: black;
+            background-color: darkgray;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px 0px;
+            border: 2px solid black;
+            ">Pop</button>
+            
+            <canvas id="canvas"></canvas>
+        """.trimIndent()
+
+        val pushButton = document.getElementById("push") as HTMLButtonElement
+        val popButton = document.getElementById("pop") as HTMLButtonElement
+
+        val canvas = document.getElementById("canvas") as HTMLCanvasElement
+
+
+        var stackList = Stack()
+        stackList.elements
+
+        pushButton.addEventListener("click", {
+            stackList.elements.add("")
+
+            showList(stackList)
+        })
+
+        popButton.addEventListener("click", {
+            stackList.elements.removeAt(0)
+
+            for (i in 0 until stackList.elements.size) {
+                canvas.drawElem()
+            }
+        })
+    })
+}
+
+fun showList(list: Stack) {
+    val canvas = document.getElementById("canvas") as HTMLCanvasElement
+
+    for (i in 0 until list.size()) {
+        canvas.drawElem()
+    }
+}
+
+private fun HTMLCanvasElement.drawElem() {
+
+    js("var canvas = document.getElementById(\"canvas\");\n" +
+            "var ctx = canvas.getContext(\"2d\");\n" +
+            "\n" +
+            "ctx.fillStyle = \"green\";\n" +
+            "ctx.fillRect(10, 10, 100, 100);")
+
+}
+
+class Stack {
+    val elements: MutableList<Any> = mutableListOf()
+
+    fun isEmpty() = elements.isEmpty()
+
+    fun size() = elements.size
+
+    fun push(item: Any) = elements.add(item)
+
+    fun pop(): Any? {
+        val item = elements.lastOrNull()
+        if (!isEmpty()) {
+            elements.removeAt(elements.size - 1)
+        }
+        return item
+    }
+
+    fun peek(): Any? = elements.lastOrNull()
+
+    override fun toString(): String = elements.toString()
 }
 
 fun lab_01(): String {
@@ -341,7 +445,7 @@ fun lab_3_004(): String {
         fun push(item: Any) = elements.add(item)
 
         fun pop(): Any? {
-            val item = elements.lastOrNull()
+            val item = elements.last     OrNull()
             if (!isEmpty()) {
                 elements.removeAt(elements.size - 1)
             }
@@ -454,7 +558,17 @@ fun lab_4_003(): String {
 
     val secondResponse = if (number % 2 == 0 || number % 3 == 0 || number % 5 == 0 || number % 9 == 0) "Число делится на 2 или 5 или 3 или 6 или 9 без остатка" else "Число не делится на 2 или 5 или 3 или 6 или 9 без остатка"
 
-    val thirdResponse = if (secondResponse.equals("Число делится на 2 или 5 или 3 или 6 или 9 без остатка")) "Число не является простым" else "Число является простым"
+    fun thirdResponseChecker(num: Int): Boolean {
+        var flag = 0
+        for (i in 2 until abs(num)) {
+            if (num % i == 0) {
+                flag++
+                break
+            }
+        }
+        return flag > 0
+    }
+        val thirdResponse = if (thirdResponseChecker(number)) "Число не является простым" else "Число является простым"
 
     return predicition.plus("""
 
@@ -466,4 +580,24 @@ fun lab_4_003(): String {
     """.trimIndent())
 }
 
-fun 
+fun lab_4_004(): String {
+    val prediction = """
+        /*
+            Для задач прогаммного моделирования стека и циклической очереди оформить в виде функций:
+                добавление элемента в стек
+                извлечение элемента из стека
+                добавление элемента в очередь
+                извлечение элемента из очереди
+        */
+    """.trimIndent()
+
+    return prediction.plus("""
+        _____________
+        
+        В прошлых реализациях эти функции уже выполнены.
+    """.trimIndent())
+}
+
+//fun lab_6_006() {
+//    document.getElementById()
+//}
