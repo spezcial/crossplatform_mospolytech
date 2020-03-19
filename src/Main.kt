@@ -579,6 +579,7 @@ fun lab_4_003(): String {
         $thirdResponse
     """.trimIndent())
 }
+<<<<<<< HEAD
 
 fun lab_4_004(): String {
     val prediction = """
@@ -601,3 +602,5 @@ fun lab_4_004(): String {
 //fun lab_6_006() {
 //    document.getElementById()
 //}
+=======
+>>>>>>> cd7f4162db51e51a2b6d6ce0f89114e0fa547ac0
